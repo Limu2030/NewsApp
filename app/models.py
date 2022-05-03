@@ -1,5 +1,9 @@
+
+
 class News:
-    def __init__(self, rpts, desc, img):
-        self.rpts = rpts
-        self.desc = desc
-        self.img = img
+    def __init__(self, title, description, urlToImage, content, publishedAt):
+        self.title = title
+        self.description = description
+        self.urlToImage = urlToImage
+        self.content = content
+        self. publishedAt = publishedAt

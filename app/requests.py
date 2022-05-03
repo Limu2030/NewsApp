@@ -1,8 +1,14 @@
 from urllib import request
-from .models import News
+# from models import News
 import json
 
 
+# api_key = None
+# base_url = None
+
+# def config_request(app):
+#     api_key = app.config['NEWS_API_KEY']
+#     base_url = app.config['NEWS_API_BASE_URL']
 
 
 def get_news():
@@ -14,4 +20,18 @@ def get_news():
         print(py_readable_urlData)
 
 
-get_news()        
+get_news()     
+
+def process_results(news_list):
+    news_results = []
+    for news_item in news_list:
+        title = news_item.get('title')
+        description = news_item.get('description')
+        urlToImage = news_item.get('urlToImage')
+        content = news_item.get('content')
+        publishedAt = news_item.get('publishedAt') 
+
+        print(f'{title} {description} {urlToImage} {content} {publishedAt}')
+
+    return(news_results)     
+
