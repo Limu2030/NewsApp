@@ -1,5 +1,4 @@
-from distutils.command.config import config
-from distutils.debug import DEBUG
+
 import os
 
 
@@ -10,10 +9,10 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET KEY')
 
 
-class ProdConfig(config):
+class ProdConfig(Config):
     pass
 
-class DevConfig(config):
+class DevConfig(Config):
     DEBUG = True
 
 

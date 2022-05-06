@@ -18,20 +18,22 @@ def get_news():
         get_news_data = url_data.read()
         py_readable_urlData = json.loads(get_news_data) 
         print(py_readable_urlData)
+        finlist = process_results(py_readable_urlData)
 
 
-get_news()     
 
-def process_results(news_list):
-    news_results = []
-    for news_item in news_list:
-        title = news_item.get('title')
-        description = news_item.get('description')
-        urlToImage = news_item.get('urlToImage')
-        content = news_item.get('content')
-        publishedAt = news_item.get('publishedAt') 
+
+def process_results(url_list):
+    url_results = []
+    for url_item in url_list['articles']:
+        title = url_item.get('title')
+        description = url_item.get('description')
+        urlToImage = url_item.get('urlToImage')
+        content = url_item.get('content')
+        publishedAt = url_item.get('publishedAt') 
 
         print(f'{title} {description} {urlToImage} {content} {publishedAt}')
 
-    return(news_results)     
+    return(url_results)     
 
+get_news() 
