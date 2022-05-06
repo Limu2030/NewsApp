@@ -1,12 +1,12 @@
-from urllib import request
-from models import News
-import json
+import urllib.request, json 
+from .models import News
+
 
 
 api_key = None
 base_url = None
 
-def config_request(app):
+def configure_request(app):
     global api_key, base_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
@@ -14,12 +14,12 @@ def config_request(app):
 
 def get_news():
     news_url = base_url.format(api_key)
-    with request.urlopen(news_url) as url:
+    with urllib.request.urlopen(news_url) as url:
         get_news_data = url.read()
         py_readable_urlData = json.loads(get_news_data) 
         news_results = None
         if py_readable_urlData['articles']:
-            news_list = py_readable_urlData['article']
+            news_list = py_readable_urlData['articles']
             news_results = process_results(news_list)
     return news_results
 
