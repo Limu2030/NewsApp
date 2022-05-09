@@ -12,16 +12,13 @@
 
 ## Description
 
-<p>On Average, a person has at least 7 different accounts he or she has signed into, be it email, social media, entertainment or job portal accounts. It becomes really hard to remember all those passwords and even create new ones. Password-Locker is an amazing application that will help manage our passwords and even generate new passwords for us.
+<p>In context, your parents are busy workers and they get home really late. They always miss the news and they are very frustrated since they can't keep up with current affairs. NewsApp is an application designed to help people with busy schedules updated with the lastest news.</p>
 
-This application will enable a user to create an account in it. Thereafter use the Password-Locker account to create account details with their credentials. This will lead to unneccessary panic brought about by the frustrations of forgetting ones passwords and details to every account a user has.</p>
-
-Password-Locker allows users to:
+NewsApp allows users to:
 <ol>
-<li>Sign up for Password-Locker </li>
-<li>Login to Password-Locker </li>
-<li>View all your accounts and details, 
-<li>Delete the accounts</li>
+<li>View various news sources on the homepage of the application. </li>
+<li>See the image, description and the time a news article was created. </li>
+<li>click on an article and read the full article on the source website. </li>
 </ol>
 
 
@@ -29,30 +26,42 @@ Password-Locker allows users to:
 ### Prerequisites
 python3.8
 pip
-pyperclip
+gunicorn
+flask
 
-### Cloning
-In your terminal:
 
-       $ git clone https://github.com/Limu2030/password-locker
-       $ cd passwordlocker
-       
+### Instructions
+<ol>
+        <li>In your terminal:
+
+        $ git clone https://github.com/Limu2030/NewsApp
+        $ cd NewsApp
+</li>
+        <li> create a virtual environment
+
+        $ python3.8 -m venv venv
+
+          activate the virtual environment 
+
+        $ source newsvirtual/bin/activate
+
+  </li>
+  <li> Install Flask
+
+        $ pip install flask || pip3 install flask
+  </li>
+</ol>
+
 ### Running the Application
 To run the application: 
 
-        $ ./run_application.py
-
-### Testing the Application
-To run the tests: 
-
-        $ python3 test_Credentials.py
-
-        $ python3 test_User.py
+        $ ./manage.py
 
 
 ## Technologies Used
 
 - Python
+- Bootstrap
 
 
 ## License
