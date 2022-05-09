@@ -1,5 +1,7 @@
-import urllib.request, json 
+import json
 from .models import News
+from flask import request
+
 
 
 
@@ -14,7 +16,7 @@ def configure_request(app):
 
 def get_news():
     news_url = base_url.format(api_key)
-    with urllib.request.urlopen(news_url) as url:
+    with request.urlopen(news_url) as url:
         get_news_data = url.read()
         py_readable_urlData = json.loads(get_news_data) 
         news_results = None
